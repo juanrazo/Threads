@@ -1,0 +1,26 @@
+typedef struct {
+  int numAvailable;
+  ThreadQ waitingThreads;
+} Mutex;
+
+void mutexInit(Mutex *m, int available) {
+  initThreadQ(&m->waitingThreads);
+  m->numAvailable = available;
+}
+
+void mutexLock(Mutex *m) {
+  while (m->numAvailable == 0) {
+    contextSwitch(&m->waitingThreads); /* block */
+  }
+  m->numAvailable = 0;
+}
+
+void
+mutexUnlock(Mutex *m) {
+  m->numAvailable = 1;
+  if (m->waitingThreads.count > 0) /* make another thread ready */
+    enqueueThread(&readyQ, dequeueThread(&m->waitingThreads));
+}
+
+
+     

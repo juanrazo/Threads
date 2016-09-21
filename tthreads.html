@@ -1,0 +1,97 @@
+e<title> Theory of OS - threads </title>
+<h1>Theory of OS - Thread Lab </h1>
+
+<p>
+The purpose of this lab is for you to gain mastery of thread
+synchronization.  I have provided to you a tiny thread system called
+"tthreads" (gzipped tarball at <a
+href=../tthreads.tgz>tthreads.tgz</a>).  
+
+<h1> A tour of the code </h1>
+Most of the code
+is in files named tthreads.c and tthreads.h.  Below is a short
+description of potentially non-intuitive components of this library.
+
+<h2> Context Switches: setjmp/longjmp </h2>
+<p>
+To implement context switches, tthreads
+uses the "C" functions setjmp() and longjmp(), which are available under
+unix, cygwin, and most other runtime environments.  
+<p>
+Setjmp() saves a process' registers in a "jmp_buf" structure.  The
+return value of setjmp(jmp_buf) is zero when first called.
+Longjmp(jmp_buf, retval) restores those registers, effectively returning from
+setjmp() a second time, but this time setjmp() will return the value "retval"
+provided to longjmp().  Thus, a thread can save its context using setjmp,
+and another thread can "context switch" back to it using longjmp.  A
+small demo program using setjmp is provided named "setJmpDemo.c".
+I encourage students to think about why a jmp_buf's saved context is
+invalid once the routine that called setjump() returns.  
+<p>
+<a
+href=http://www.cs.utk.edu/~plank/plank/classes/cs360/360/notes/Setjmp/lecture.html>
+More info on longjmp/setjmp</a> (thanks to Ryan Knotts).
+
+<h2> Thread and List Structures </h2>
+The Thread struct (see tthreads.h) contains a jmp_buf that stores
+execution context and a linked list "next" pointer.  TaskQ structures
+are used for queues storing (1) ready processes (readyQ) and (2)
+uninitialized threads (freshQ).  These queues are likely to be useful
+to implement other synchronization primitives.  Three queue
+maipulation functions are also provided:
+<ul>
+ <li> enqueueThread
+ <li> dequeueThread
+ <li> initThreadQ
+</ul>
+
+<h2> Creating Thread Contexts</h2>
+<p>
+Each tthreads thread is allocated approximately 64k of stack space by
+a function _makeThreads1() which calls _makeThreads2().  _makethreads2()
+saves its "context" using setjmp.  To allocate a group of threads,
+these routines call each other in a mutually recursive fashion.  Since
+a jmp_buf is invalid if the routine that called setjmp() returns, the pair of recursive
+makeThreads functions instead longjmp back to main()'s context.
+
+<h2> Demo program: threadTest.c </h2>
+<p>
+ThreadTest recursively creates three threads, each which is assigned a
+workerNum in the range of (0..2).  They iterate through a short loop 3*workerNum
+times, yielding the cpu (using the yield() function) before
+terminating.
+
+<h2> Mutual exclusion: mutex.c, mutex.h, mutexDemo.c</h2>
+<p>
+I wrote a a simple mutex, its utilization is demonstrated in mutexDemo.c.
+
+<h1> Your Project </h1>
+Implement a trivial producer-consumer system in
+tthreads with
+four producers and one consumer.  Each producer will enqueue a
+sequence of 100 integer values (0..99) into a bounded production queue
+of capacity 10.  The consumer will delete values from this queue, and
+when done, print their sum.  To control access to the queues, you should utilizebinary and counting semaphores.  You are free to use the mutual
+exclusion algorithm in mutex.c/mutex.h as a binary semaphore, and to
+extend it to a counting semaphore.
+<h2> Extra Credit Component (REQUIRED FOR GRAD STUDENTS) </H2>
+ Extend the thread system so that each thread has a priority
+between 0 and 255.  A thread's default priority will be 128.  You must
+define an inteface that will allow a thread to adjust its priority.
+The scheduler's behavior should be modified so that, when scheduling
+decisions are made, if threads with
+multiple priorities are ready, a thread with the lowest priority
+number will be scheduled.  You should demonstrate that this mechanism
+works correctly by setting giving greater priority (lower priority
+value) to threads that produce than consume and checking that the
+scheduling decisions are appropriate.
+
+
+
+
+
+
+
+
+
+
