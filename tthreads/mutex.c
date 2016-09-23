@@ -14,8 +14,7 @@ void mutexLock(Mutex *m) {
   yield();			/* just to mix things up a bit! */
 }
 
-void
-mutexUnlock(Mutex *m) {
+void mutexUnlock(Mutex *m) {
   yield();			/* just to mix things up a bit! */
   m->numAvailable = 1;
   if (m->waitingThreads.count != 0) /* make another thread ready */

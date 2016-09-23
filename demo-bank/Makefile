@@ -5,7 +5,7 @@ all: bank_simple bank_mutex bank_transfer_bad
 clean:
 	rm -f *.o *.exe *stackdump bank_simple bank_mutex bank_transfer_bad 
 
-CFLAGS=-g -O2 -fno-ipa-sra -L../lib -I../h
+CFLAGS=-g -O1 -fno-ipa-sra -L../lib -I../h
 
 # include files (forces recompile if changed)
 

@@ -3,13 +3,13 @@
 #include "assert2.h"
 #include "tthreads.h"
 
-Thread *threads, *currentThread = (Thread *)0; /* zero when running main */
-static int numThreads = 0;
+Thread *threads,                     /**< A list of all the threads within the system */    
+       *currentThread = (Thread *)0; /**< current thread, zero when running main */
+static int numThreads = 0;           /**< Number of total threads in the system */
 
-ThreadQ readyQ;
-static ThreadQ freshQ;		/* queue of fresh (never run) threads */
-
-static jmp_buf mainContext;	/* context of main thread */
+ThreadQ readyQ;                      /**< The queue of threads that are ready to run */
+static ThreadQ freshQ;		         /**< queue of fresh (never run) threads */
+static jmp_buf mainContext;	         /**< context of main thread */
 
 
 void initThreadQ(ThreadQ *tq) {

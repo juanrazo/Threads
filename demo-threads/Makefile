@@ -5,7 +5,7 @@ all: mutexTest setjmpDemo threadTest1
 clean:
 	rm -f *.o *.exe *stackdump mutexTest setjmpDemo threadTest1
 
-CFLAGS=-g -O2 -fno-ipa-sra -L../lib -I../h
+CFLAGS=-g -O1 -fno-ipa-sra -L../lib -I../h
 
 mutexTest: mutexTest.o ../lib/tthreads.a
 setjmpDemo: setjmpDemo.o ../lib/tthreads.a

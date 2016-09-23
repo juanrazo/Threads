@@ -1,6 +1,6 @@
 all: tthreads.a
 
-CFLAGS=-g -O2 -fno-ipa-sra
+CFLAGS=-g -O1 -fno-ipa-sra
 
 tthreads.a: tthreads.o mutex.o assert2.o
 	ar crs $@ $^
