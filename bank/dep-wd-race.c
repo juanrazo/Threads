@@ -27,8 +27,8 @@ typedef struct {
   int balance;
 } Account;
 
-ATM atms[3] = { {0,0}, {1,0}, {2,0} };  /**<  3 atms, zero dollars */
-Account accounts[2] = {{0,0}, {1,0}};   /**<  2 accounts, zero balances */
+ATM atms[3] = { {0,0}, {1,0}, {2,0} };  /**<  3 atms, zero dollars each */
+Account accounts[2] = {{0,0}, {1,0}};   /**<  2 accounts, zero balance each */
 
 /** Withdraw money from an account. If the requested amount
  *  is available withdraws the amount from specified account
@@ -50,7 +50,7 @@ doWithdraw(ATM *atm, Account *account, int request)
     yield();
     account->balance = bal;
     atm->cashFlowOut += request;
-    success = 1;
+    success = 1;                        /* succeeded */
   }
   return success;
 }
@@ -70,8 +70,7 @@ doWithdraws(ATM *atm)
   }
 }
 
-/** Deposits money into an account. If the requested amount
- *  is available withdraws the amount from specified account
+/** Deposits money into an account.
  *
  *  \param atm The atm where the deposit is being made
  *  \param account The account being deposited to

@@ -1,9 +1,16 @@
+/** \file mutexTest.c
+ *  \brief An example of how to use the mutex to
+ *  to control access to critical regions.
+ */
 #include "tthreads.h"
 #include "stdio.h"
 #include "mutex.h"
 
-Mutex m;
+Mutex m;                                /**< Single instance of resource for all workers */
 
+/** Worker thread, attempts to take lock and 
+ *  prints what part of critical section it's in.
+ */
 void worker(void *ignored) 
 {
   int i;
@@ -22,7 +29,7 @@ void worker(void *ignored)
   } 
 }
 
-
+/** Inits mutex, creates 2 worker threads, and starts threading system */
 int main()
 {
   mutexInit(&m, 1);

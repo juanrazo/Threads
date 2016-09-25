@@ -1,7 +1,6 @@
 var NAVTREE =
 [
   [ "Operating Systems Threads Lab", "index.html", [
-    [ "os-threads", "md__home_student_os-threads_README.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
