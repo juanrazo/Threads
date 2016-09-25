@@ -5,8 +5,9 @@ Operating systems threads lab
 ## Introduction to thread system
 
 The tthreads package is a non-preemptive user mode threading library.
-Details of the API can be found here TODO FIXME. This document describes
-how it is intended to be used.
+This document describes
+how it is intended to be used.  Its 
+[API is also documented online](html_doc/html/index.html).
 
 Step 1: makeThreads initializes the thread system. It must be called
 prior to any other functions from the tthreads library.
