@@ -4,7 +4,7 @@ all:
 	(cd demo-threads; make)
 
 
-.PHONY: clean all tthreads demo-bank demo-threads #declare these targets as phony
+.PHONY: clean all 
 
 clean:
 	(cd tthreads ; make clean)
