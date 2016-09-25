@@ -7,7 +7,7 @@ Operating systems threads lab
 The tthreads package is a non-preemptive user mode threading library.
 This document describes
 how it is intended to be used.  Its 
-[API is also documented online](html_doc/html/index.html).
+[API is also documented online](https://cdn.rawgit.com/robustUTEP/os-threads/master/html_doc/html/index.html)
 
 Step 1: makeThreads initializes the thread system. It must be called
 prior to any other functions from the tthreads library.
