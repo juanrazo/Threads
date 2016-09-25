@@ -2,7 +2,7 @@
 
 ## Access to a single account
 
-The following prorams implemente
+The following programs implement
 deposits and withdrawals issued by multiple ATMs.  All of these
 transactions access the same bank account.
 
