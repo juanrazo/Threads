@@ -110,10 +110,6 @@ int main()
       sumFlowOut = 0;                   /**< Total cashflow from all ATMs */
   makeThreads(numThreads);
 
-  /* initialize account mutexes (unlocked) */
-  for (i = 0; i < 3; i++)
-    mutexInit(&(accounts[i].lock), 1);
-  
   /* ATM 0 does deposits */
   createThread((void (*)(void *))doDeposits, &atms[0]);
 
