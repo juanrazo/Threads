@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_5f_5fassert2',['__assert2',['../d1/dbe/assert2_8h.html#aba8c54a1e77a1c47f6ff2ddeb871db1e',1,'assert2.c']]]
+  ['contextswitch',['contextSwitch',['../df/d44/tthreads_8h.html#a7398f0140b9080545c9add224beef13e',1,'tthreads.c']]],
+  ['createthread',['createThread',['../df/d44/tthreads_8h.html#a5b7513c5475181a113d28b70ee375a95',1,'tthreads.c']]]
 ];

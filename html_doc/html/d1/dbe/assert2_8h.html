@@ -117,12 +117,13 @@ $(document).ready(function(){initNavTree('d1/dbe/assert2_8h.html','../../');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:acf484656e7a0ca5b3aa8f835d6e11f18"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbe/assert2_8h.html#acf484656e7a0ca5b3aa8f835d6e11f18">assert2</a>(e,  msg)          &#160;&#160;&#160;((e) ? (void)0 : <a class="el" href="../../d1/dbe/assert2_8h.html#aba8c54a1e77a1c47f6ff2ddeb871db1e">__assert2</a>(__FILE__, __LINE__, &quot;e&quot;, msg))</td></tr>
+<tr class="memitem:acf484656e7a0ca5b3aa8f835d6e11f18"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbe/assert2_8h.html#acf484656e7a0ca5b3aa8f835d6e11f18">assert2</a>(e,  msg)          &#160;&#160;&#160;((e) ? (void)0 : __assert2(__FILE__, __LINE__, &quot;e&quot;, msg))</td></tr>
 <tr class="separator:acf484656e7a0ca5b3aa8f835d6e11f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aba8c54a1e77a1c47f6ff2ddeb871db1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dbe/assert2_8h.html#aba8c54a1e77a1c47f6ff2ddeb871db1e">__assert2</a> (const char *filename, int linenum, const char *expr, char *msg)</td></tr>
+<tr class="memitem:aba8c54a1e77a1c47f6ff2ddeb871db1e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba8c54a1e77a1c47f6ff2ddeb871db1e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>__assert2</b> (const char *filename, int linenum, const char *expr, char *msg)</td></tr>
 <tr class="separator:aba8c54a1e77a1c47f6ff2ddeb871db1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -147,47 +148,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((e) ? (void)0 : <a class="el" href="../../d1/dbe/assert2_8h.html#aba8c54a1e77a1c47f6ff2ddeb871db1e">__assert2</a>(__FILE__, __LINE__, &quot;e&quot;, msg))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>if NDEBUG is defined then assert2 checks assertions, otherwise they are ignored </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="aba8c54a1e77a1c47f6ff2ddeb871db1e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void __assert2 </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>linenum</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>expr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>msg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td></td><td>&#160;&#160;&#160;((e) ? (void)0 : __assert2(__FILE__, __LINE__, &quot;e&quot;, msg))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -195,13 +156,12 @@ Functions</h2></td></tr>
 <p>This assert tests expr, if its true it prints msg along with the file and line number where the assert occured and terminates the program.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filename</td><td>The name of the file that the error occured in </td></tr>
-    <tr><td class="paramname">linenum</td><td>The line number where the error occured </td></tr>
-    <tr><td class="paramname">expr</td><td>The expression being tested </td></tr>
-    <tr><td class="paramname">msg</td><td>The message being printed </td></tr>
+    <tr><td class="paramname">e</td><td>The expression being tested </td></tr>
+    <tr><td class="paramname">msg</td><td>The message being printed</td></tr>
   </table>
   </dd>
 </dl>
+<p>if NDEBUG is defined then assert2 checks assertions, otherwise they are ignored </p>
 
 </div>
 </div>
