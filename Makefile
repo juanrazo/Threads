@@ -1,6 +1,6 @@
 all:
 	(cd tthreads ; make install)
-	(cd demo-bank; make)
+	(cd bank; make)
 	(cd demo-threads; make)
 
 
