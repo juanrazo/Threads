@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['enqueuethread',['enqueueThread',['../df/d44/tthreads_8h.html#a2867466a646c25aff96829c4649cde64',1,'tthreads.c']]]
+  ['gettid',['getTid',['../df/d44/tthreads_8h.html#a6cf2e547f431106f5c92eeec85add26b',1,'tthreads.c']]]
 ];

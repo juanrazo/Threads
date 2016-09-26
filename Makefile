@@ -8,6 +8,6 @@ all:
 
 clean:
 	(cd tthreads ; make clean)
-	(cd demo-bank; make clean)
+	(cd bank; make clean)
 	(cd demo-threads; make clean)
 	rm -rf h lib

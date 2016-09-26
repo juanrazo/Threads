@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['startthreads',['startThreads',['../df/d44/tthreads_8h.html#a63ad6b779b7eb6d4f3a98a99bfbe53ce',1,'tthreads.c']]]
+  ['yield',['yield',['../df/d44/tthreads_8h.html#a58c8b2ad0ea491a6642e5e1cbd358c89',1,'tthreads.c']]]
 ];
