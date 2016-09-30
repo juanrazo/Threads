@@ -133,15 +133,15 @@ int doTransfer(ATM *atm, Account *from, Account *to, int amt)
 {
   int success = 0;                      /**< success status */
   mutexLock(&from->lock);
-  //mutexLock(&to->lock);
+  //mutexLock(&to->lock);              This is the cause of the Deadlock
   if (doWithdraw(atm, from, amt)) {
-    mutexUnlock(&from->lock);
+    mutexUnlock(&from->lock);          // Release so the other thread can use
     mutexLock(&to->lock);
     doDeposit(atm, to, amt);
     mutexUnlock(&to->lock);
     success = 1;                        /**< succeeded */
   }
-  else{
+  else{                               // In case doWithdraw() is false
     mutexUnlock(&from->lock);
   }
   //mutexUnlock(&from->lock);

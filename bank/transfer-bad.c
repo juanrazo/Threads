@@ -129,8 +129,7 @@ doDeposits(ATM *atm)
  *  \param amt Tha amount being transferred
  *  \return Returns 1 if withdrawal was succesful, 0 otherwise
  */
-int
-doTransfer(ATM *atm, Account *from, Account *to, int amt)
+int doTransfer(ATM *atm, Account *from, Account *to, int amt)
 {
   int success = 0;                      /**< success status */
   mutexLock(&from->lock);
