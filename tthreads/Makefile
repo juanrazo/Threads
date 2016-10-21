@@ -2,7 +2,7 @@ all: tthreads.a
 
 CFLAGS=-g -O1 -fno-ipa-sra
 
-tthreads.a: tthreads.o mutex.o assert2.o
+tthreads.a: tthreads.o mutex.o assert2.o semaphore.o
 	ar crs $@ $^
 
 install: tthreads.a
