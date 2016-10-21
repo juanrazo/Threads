@@ -103,7 +103,7 @@ void producer(){
     mutexUnlock(&(&buff)->lock);
     up(&full);
 
-    printf("Produced %d\n", item);
+    //printf("Produced %d\n", item);
     item++;
   }
   flag++;
@@ -127,12 +127,12 @@ void consumer(){
     mutexLock(&(&buff)->lock);
 
     consume = dequeue(&buff);
-    printf("Consumed %d\n", consume);
+    //printf("Consumed %d\n", consume);
 
     mutexUnlock(&(&buff)->lock);
     up(&empty);
     total = total + consume;
-    printf("Total count %d\n", total);
+    //printf("Total count %d\n", total);
 
     if((flag == (THREADS-1)) && isBufferEmpty())
       consumeFlag=0;
