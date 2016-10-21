@@ -4,6 +4,17 @@ Operating systems threads lab
 
 ## Introduction to thread system
 
+## Part 2 is located in consumer and tthreads folder
+The producer consumer and ReadMe are in the consumer folder.
+The semaphore is located in the tthreads folder.
+
+
+
+
+
+
+
+
 The tthreads package is a non-preemptive user mode threading library.
 This document describes
 how it is intended to be used.  Its 
