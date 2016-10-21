@@ -13,5 +13,7 @@ website tutorialspoint.com. The code for my producer consumer comes from section
 is how it produces and consumes the integers, which is just and increment and sum to a variable. To stop the consumer from
 consuming once the 4 producers are done I created a flag. Essentially once every producer is done then just increment the
 flag. The consumer checks if the flag is equal to 4 (THREADS-1) and the queue is empty after its done an iteration of 
-consuming. 
-
+consuming. To run the ./consumer program a 'make' command must be executed first in the threads-lab-juanrazo folder. I 
+commented the print of every produced and consumed number so the program just prints out the result. 
+I worked with Eric Camacho to discus the problem, assited Pedro Barragan and Genesis Bejerano to understand the problem but
+did not share any code with students.
