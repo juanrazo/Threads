@@ -9,12 +9,6 @@ The producer consumer and ReadMe are in the consumer folder.
 The semaphore is located in the tthreads folder.
 
 
-
-
-
-
-
-
 The tthreads package is a non-preemptive user mode threading library.
 This document describes
 how it is intended to be used.  Its 
